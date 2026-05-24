@@ -1,0 +1,20 @@
+{
+  "name": "docify-js",
+  "version": "1.0.0",
+  "description": "LLM-first document generation library. JSON in → beautiful PDF/HTML out.",
+  "main": "docify.js",
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "pdf", "invoice", "resume", "certificate", "document", "generation",
+    "llm", "ai", "template", "html", "export", "docx"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/docify"
+  },
+  "homepage": "https://docify.js.org"
+}

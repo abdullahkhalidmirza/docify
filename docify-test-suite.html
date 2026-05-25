@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>docifyai — Test Suite</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0d0d0d;--paper:#f5f0e8;--paper2:#ede8df;
+  --red:#c8391a;--border:#d4cec5;--mid:#6b6560;
+  --display:'Bebas Neue',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --body:'Outfit',sans-serif;
+}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);font-weight:300;}
+
+nav{
+  background:var(--ink);border-bottom:2px solid var(--red);
+  padding:0 48px;height:52px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{font-family:var(--display);font-size:20px;letter-spacing:2px;color:var(--paper);}
+.nav-logo span{color:var(--red)}
+.nav-sub{font-family:var(--mono);font-size:11px;color:rgba(245,240,232,0.4);}
+
+.hero{
+  padding:60px 48px 40px;
+  border-bottom:1px solid rgba(245,240,232,0.1);
+}
+.hero h1{font-family:var(--display);font-size:64px;letter-spacing:2px;line-height:1;margin-bottom:12px;}
+.hero h1 span{color:var(--red)}
+.hero p{font-family:var(--mono);font-size:12px;color:rgba(245,240,232,0.4);letter-spacing:1px;}
+
+.section{padding:48px;border-bottom:1px solid rgba(245,240,232,0.08);}
+.section-header{
+  display:flex;align-items:baseline;gap:20px;margin-bottom:32px;
+  padding-bottom:16px;border-bottom:1px solid rgba(245,240,232,0.1);
+}
+.section-title{font-family:var(--display);font-size:40px;letter-spacing:2px;color:var(--paper);}
+.section-count{font-family:var(--mono);font-size:11px;color:var(--red);letter-spacing:1px;}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;}
+
+.card{
+  background:rgba(245,240,232,0.04);
+  border:1px solid rgba(245,240,232,0.1);
+  border-radius:2px;
+  overflow:hidden;
+  transition:border-color 0.2s;
+}
+.card:hover{border-color:rgba(200,57,26,0.5);}
+
+.card-header{
+  padding:16px 20px;
+  border-bottom:1px solid rgba(245,240,232,0.08);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.card-name{font-family:var(--mono);font-size:11px;color:rgba(245,240,232,0.5);letter-spacing:1px;}
+.card-label{
+  font-family:var(--mono);font-size:10px;letter-spacing:1px;
+  background:rgba(200,57,26,0.15);color:var(--red);
+  padding:2px 8px;border-radius:2px;
+}
+
+.card-body{padding:16px 20px;}
+.card-desc{font-size:13px;color:rgba(245,240,232,0.6);line-height:1.6;margin-bottom:16px;}
+
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;}
+.btn{
+  font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;
+  padding:8px 14px;border:1px solid rgba(245,240,232,0.15);
+  background:transparent;color:rgba(245,240,232,0.6);
+  cursor:pointer;transition:all 0.15s;border-radius:2px;
+}
+.btn:hover{background:var(--red);border-color:var(--red);color:#fff;}
+.btn-pdf{background:rgba(200,57,26,0.1);border-color:rgba(200,57,26,0.3);color:var(--red);}
+.btn-pdf:hover{background:var(--red);color:#fff;}
+
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:10px;
+  padding:2px 8px;border-radius:2px;margin-right:4px;margin-bottom:4px;
+  background:rgba(245,240,232,0.06);color:rgba(245,240,232,0.4);
+  border:1px solid rgba(245,240,232,0.08);
+}
+
+footer{
+  padding:24px 48px;border-top:2px solid var(--red);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-logo{font-family:var(--display);font-size:18px;letter-spacing:2px;}
+.footer-logo span{color:var(--red)}
+.footer-copy{font-family:var(--mono);font-size:10px;color:rgba(245,240,232,0.25);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">DOCIFY<span>AI</span></div>
+  <div class="nav-sub">TEST SUITE — 25 SAMPLES</div>
+</nav>
+
+<div class="hero">
+  <h1>TEST <span>SUITE</span></h1>
+  <p>5 ELEGANT SAMPLES PER TEMPLATE · CLICK ANY BUTTON TO GENERATE</p>
+</div>
+
+<!-- ══ INVOICES ══ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">INVOICES</div>
+    <div class="section-count">5 SAMPLES</div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">INV-001</div>
+        <div class="card-label">CREATIVE AGENCY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-desc">Luxury branding agency invoice for a fashion label. Deep navy palette with itemized creative services.</div>
+        <div style="margin-bottom:12px;"><span class="tag">brand colors</span><span class="tag">tax</span><span class="tag">bank details</span></div>
+        <div class="btn-row">
+          <button class="btn btn-pdf" onclick="gen('invoice',inv1,'pdf')">↓ PDF</button>
+          <button class="btn" onclick="gen('invoice',inv1,'html')">↓ HTML</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">INV-002</div>
+        <div class="card-label">FREELANCE DEV</div>
+      </div>
+      <div class="card-body">
+        <div class="card-desc">Software developer invoice for a SaaS startup. Clean emerald theme with milestone-based billing.</div>
+        <div style="margin-bottom:12px;"><span class="tag">milestone billing</span><span class="tag">discount</span></div>
+        <div class="btn-row">
+          <button class="btn btn-pdf" onclick="gen('invoice',inv2,'pdf')">↓ PDF</button>
+          <button class="btn" onclick="gen('invoice',inv2,'html')">↓ HTML</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">INV-003</div>
+        <div class="card-label">INTERIOR DESIGN</div>
+      </div>
+      <div class="card-body">
+        <div class="card-desc">Interior design studio invoice for a penthouse project. Warm terracotta tones, luxury feel.</div>
+        <div style="margin-bottom:12px;"><span class="tag">luxury</span><span class="tag">multiple items</span></div>
+        <div class="btn-row">
+          <button class="btn btn-pdf" onclick="gen('invoice',inv3,'pdf')">↓ PDF</button>
+          <button class="btn" onclick="gen('invoice',inv3,'html')">↓ HTML</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">INV-004</div>
+        <div class="card-label">PHOTOGRAPHY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-desc">Wedding photographer invoice. Elegant rose gold accent with usage rights and print packages.</div>
+        <div style="margin-bottom:12px;"><span class="tag">event</span><span class="tag">packages</span></div>
+        <div class="btn-row">
+          <button class="btn btn-pdf" onclick="gen('invoice',inv4,'pdf')">↓ PDF</button>
+          <button class="btn" onclick="gen('invoice',inv4,'html')">↓ HTML</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">INV-005</div>
+        <div class="card-label">LEGAL SERVICES</div>
+      </div>
+      <div class="card-body">
+        <div class="card-desc">Law firm invoice for corporate legal services. Deep charcoal, professional, hourly billing.</div>
+        <div style="margin-bottom:12px;"><span class="tag">hourly</span><span class="tag">professional</span></div>
+        <div class="btn-row">
+          <button class="btn btn-pdf" onclick="gen('invoice',inv5,'pdf')">↓ PDF</button>
+          <button class="btn" onclick="gen('invoice',inv5,'html')">↓ HTML</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ RESUMES ══ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">RESUMES</div>
+    <div class="section-count">5 SAMPLES</div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">RES-001</div><div class="card-label">PRODUCT DESIGNER</div></div>
+      <div class="card-body">
+        <div class="card-desc">Senior product designer at top-tier tech companies. Indigo accent, strong portfolio background.</div>
+        <div style="margin-bottom:12px;"><span class="tag">tech</span><span class="tag">design</span><span class="tag">6yr exp</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('resume',res1,'pdf')">↓ PDF</button><button class="btn" onclick="gen('resume',res1,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">RES-002</div><div class="card-label">INVESTMENT BANKER</div></div>
+      <div class="card-body">
+        <div class="card-desc">Finance professional at Goldman Sachs level. Classic navy, achievement-focused bullet points.</div>
+        <div style="margin-bottom:12px;"><span class="tag">finance</span><span class="tag">MBA</span><span class="tag">formal</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('resume',res2,'pdf')">↓ PDF</button><button class="btn" onclick="gen('resume',res2,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">RES-003</div><div class="card-label">FULL STACK DEV</div></div>
+      <div class="card-body">
+        <div class="card-desc">Software engineer with FAANG experience. Dark slate, technical skills, open source contributions.</div>
+        <div style="margin-bottom:12px;"><span class="tag">engineering</span><span class="tag">FAANG</span><span class="tag">OSS</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('resume',res3,'pdf')">↓ PDF</button><button class="btn" onclick="gen('resume',res3,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">RES-004</div><div class="card-label">MARKETING DIRECTOR</div></div>
+      <div class="card-body">
+        <div class="card-desc">CMO-level marketing exec. Bold crimson accent, growth metrics, brand leadership.</div>
+        <div style="margin-bottom:12px;"><span class="tag">marketing</span><span class="tag">C-suite</span><span class="tag">growth</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('resume',res4,'pdf')">↓ PDF</button><button class="btn" onclick="gen('resume',res4,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">RES-005</div><div class="card-label">ARCHITECT</div></div>
+      <div class="card-body">
+        <div class="card-desc">Licensed architect with international projects. Warm amber tone, project-portfolio style.</div>
+        <div style="margin-bottom:12px;"><span class="tag">architecture</span><span class="tag">international</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('resume',res5,'pdf')">↓ PDF</button><button class="btn" onclick="gen('resume',res5,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ CERTIFICATES ══ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">CERTIFICATES</div>
+    <div class="section-count">5 SAMPLES</div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">CERT-001</div><div class="card-label">BOOTCAMP</div></div>
+      <div class="card-body">
+        <div class="card-desc">Full-stack web development bootcamp completion. Deep purple, prestigious feel, grade included.</div>
+        <div style="margin-bottom:12px;"><span class="tag">education</span><span class="tag">grade</span><span class="tag">tech</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('certificate',cert1,'pdf')">↓ PDF</button><button class="btn" onclick="gen('certificate',cert1,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">CERT-002</div><div class="card-label">EXCELLENCE AWARD</div></div>
+      <div class="card-body">
+        <div class="card-desc">Corporate employee excellence award. Royal gold palette, formal language, CEO signed.</div>
+        <div style="margin-bottom:12px;"><span class="tag">corporate</span><span class="tag">award</span><span class="tag">formal</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('certificate',cert2,'pdf')">↓ PDF</button><button class="btn" onclick="gen('certificate',cert2,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">CERT-003</div><div class="card-label">WORKSHOP</div></div>
+      <div class="card-body">
+        <div class="card-desc">Design thinking workshop by a creative studio. Vibrant coral, modern and artistic feel.</div>
+        <div style="margin-bottom:12px;"><span class="tag">workshop</span><span class="tag">creative</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('certificate',cert3,'pdf')">↓ PDF</button><button class="btn" onclick="gen('certificate',cert3,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">CERT-004</div><div class="card-label">MEDICAL TRAINING</div></div>
+      <div class="card-body">
+        <div class="card-desc">Medical CPR & first aid certification. Clinical teal, official certification ID, authority seal.</div>
+        <div style="margin-bottom:12px;"><span class="tag">medical</span><span class="tag">official</span><span class="tag">ID</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('certificate',cert4,'pdf')">↓ PDF</button><button class="btn" onclick="gen('certificate',cert4,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">CERT-005</div><div class="card-label">UNIVERSITY HONOR</div></div>
+      <div class="card-body">
+        <div class="card-desc">University dean's list honor certificate. Deep burgundy, academic prestige, semester noted.</div>
+        <div style="margin-bottom:12px;"><span class="tag">academic</span><span class="tag">honor</span><span class="tag">university</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('certificate',cert5,'pdf')">↓ PDF</button><button class="btn" onclick="gen('certificate',cert5,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ REPORTS ══ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">REPORTS</div>
+    <div class="section-count">5 SAMPLES</div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">REP-001</div><div class="card-label">QUARTERLY REVENUE</div></div>
+      <div class="card-body">
+        <div class="card-desc">Q1 2026 business performance report for investors. Emerald theme, revenue breakdown, data tables.</div>
+        <div style="margin-bottom:12px;"><span class="tag">financial</span><span class="tag">Q1</span><span class="tag">investor</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('report',rep1,'pdf')">↓ PDF</button><button class="btn" onclick="gen('report',rep1,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">REP-002</div><div class="card-label">MARKET RESEARCH</div></div>
+      <div class="card-body">
+        <div class="card-desc">Consumer behavior market research report. Blue steel, detailed sections, survey methodology.</div>
+        <div style="margin-bottom:12px;"><span class="tag">research</span><span class="tag">market</span><span class="tag">data</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('report',rep2,'pdf')">↓ PDF</button><button class="btn" onclick="gen('report',rep2,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">REP-003</div><div class="card-label">SEO AUDIT</div></div>
+      <div class="card-body">
+        <div class="card-desc">Digital agency SEO performance audit for a client. Orange accent, technical findings, action items.</div>
+        <div style="margin-bottom:12px;"><span class="tag">SEO</span><span class="tag">digital</span><span class="tag">audit</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('report',rep3,'pdf')">↓ PDF</button><button class="btn" onclick="gen('report',rep3,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">REP-004</div><div class="card-label">SUSTAINABILITY</div></div>
+      <div class="card-body">
+        <div class="card-desc">Corporate sustainability & ESG annual report. Forest green, environmental metrics, goals.</div>
+        <div style="margin-bottom:12px;"><span class="tag">ESG</span><span class="tag">annual</span><span class="tag">green</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('report',rep4,'pdf')">↓ PDF</button><button class="btn" onclick="gen('report',rep4,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">REP-005</div><div class="card-label">HR ANALYTICS</div></div>
+      <div class="card-body">
+        <div class="card-desc">HR department workforce analytics report. Slate blue, headcount, retention, hiring pipeline.</div>
+        <div style="margin-bottom:12px;"><span class="tag">HR</span><span class="tag">workforce</span><span class="tag">analytics</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('report',rep5,'pdf')">↓ PDF</button><button class="btn" onclick="gen('report',rep5,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ PROPOSALS ══ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">PROPOSALS</div>
+    <div class="section-count">5 SAMPLES</div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">PRO-001</div><div class="card-label">WEB DEVELOPMENT</div></div>
+      <div class="card-body">
+        <div class="card-desc">Full-stack web app development proposal for a fintech startup. Bold red, phased delivery.</div>
+        <div style="margin-bottom:12px;"><span class="tag">fintech</span><span class="tag">phased</span><span class="tag">tech</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('proposal',pro1,'pdf')">↓ PDF</button><button class="btn" onclick="gen('proposal',pro1,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">PRO-002</div><div class="card-label">BRAND IDENTITY</div></div>
+      <div class="card-body">
+        <div class="card-desc">Brand identity design proposal for a luxury hotel chain. Deep plum, creative deliverables.</div>
+        <div style="margin-bottom:12px;"><span class="tag">branding</span><span class="tag">luxury</span><span class="tag">design</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('proposal',pro2,'pdf')">↓ PDF</button><button class="btn" onclick="gen('proposal',pro2,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">PRO-003</div><div class="card-label">SOCIAL MEDIA</div></div>
+      <div class="card-body">
+        <div class="card-desc">Social media management proposal for a fashion brand. Electric teal, content strategy, KPIs.</div>
+        <div style="margin-bottom:12px;"><span class="tag">social</span><span class="tag">fashion</span><span class="tag">KPIs</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('proposal',pro3,'pdf')">↓ PDF</button><button class="btn" onclick="gen('proposal',pro3,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">PRO-004</div><div class="card-label">ARCHITECTURE</div></div>
+      <div class="card-body">
+        <div class="card-desc">Commercial architecture proposal for an office tower. Concrete gray, engineering precision.</div>
+        <div style="margin-bottom:12px;"><span class="tag">architecture</span><span class="tag">commercial</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('proposal',pro4,'pdf')">↓ PDF</button><button class="btn" onclick="gen('proposal',pro4,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-name">PRO-005</div><div class="card-label">CONSULTING</div></div>
+      <div class="card-body">
+        <div class="card-desc">Management consulting proposal for operational restructuring. Navy authority, ROI-focused.</div>
+        <div style="margin-bottom:12px;"><span class="tag">consulting</span><span class="tag">ROI</span><span class="tag">strategy</span></div>
+        <div class="btn-row"><button class="btn btn-pdf" onclick="gen('proposal',pro5,'pdf')">↓ PDF</button><button class="btn" onclick="gen('proposal',pro5,'html')">↓ HTML</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">DOCIFY<span>AI</span></div>
+  <div class="footer-copy">MIT © ABDULLAH KHALID MIRZA · ABDULLAHKHALIDMIRZA.COM</div>
+</footer>
+
+<!-- CDN -->
+<script src="https://cdn.jsdelivr.net/gh/abdullahkhalidmirza/docify/docify.js"></script>
+
+<script>
+function gen(tpl, data, fmt){ Docify.use(tpl).data(data).export(fmt); }
+
+// ══ INVOICE DATA ══
+const inv1 = {
+  brand: { company: "Noir Studio", color: "#1e2a3a", email: "hello@noirstudio.co", address: "14 Mayfair Lane, London W1K 4AQ", phone: "+44 20 7946 0000" },
+  client: "Maison Lumière",
+  client_email: "orders@maisonlumiere.fr",
+  client_address: "22 Rue du Faubourg, Paris 75008",
+  invoice_number: "NS-2026-084",
+  date: "May 24, 2026",
+  due_date: "June 24, 2026",
+  items: [
+    { name: "Brand Strategy & Positioning", desc: "6-week intensive brand discovery and strategy", qty: 1, price: 8500 },
+    { name: "Visual Identity System", desc: "Logo, typography, color palette, brand guidelines", qty: 1, price: 12000 },
+    { name: "Campaign Art Direction", desc: "Spring/Summer 2026 lookbook direction", qty: 1, price: 6500 },
+    { name: "Social Media Asset Pack", desc: "120 branded templates for Instagram & TikTok", qty: 1, price: 2800 }
+  ],
+  tax: 0.2,
+  bank: "Barclays Bank · Sort Code: 20-45-78 · Account: 83921047",
+  note: "Payment terms: 50% upfront, 50% on delivery. Late payments subject to 2% monthly interest."
+};
+
+const inv2 = {
+  brand: { company: "CodeForge Labs", color: "#059669", email: "billing@codeforgelabs.io", address: "Suite 400, 1 Market Street, San Francisco, CA 94105" },
+  client: "Nexus SaaS Inc.",
+  client_email: "finance@nexussaas.com",
+  invoice_number: "CFL-2026-031",
+  date: "May 24, 2026",
+  due_date: "June 7, 2026",
+  items: [
+    { name: "Milestone 1 — Architecture & Setup", desc: "System design, infrastructure, CI/CD pipeline", qty: 1, price: 15000 },
+    { name: "Milestone 2 — Core Backend APIs", desc: "Auth, billing, user management, webhooks", qty: 1, price: 22000 },
+    { name: "Milestone 3 — Frontend Dashboard", desc: "React app, analytics, admin panel", qty: 1, price: 18000 },
+    { name: "Code Review & Documentation", qty: 1, price: 3500 }
+  ],
+  discount: 0.05,
+  tax: 0.0875,
+  note: "5% loyalty discount applied. All source code transferred upon final payment."
+};
+
+const inv3 = {
+  brand: { company: "Atelier Forma", color: "#b45309", email: "studio@atelierforma.it", address: "Via Montenapoleone 8, Milan 20121", phone: "+39 02 7600 8000" },
+  client: "Mr. & Mrs. Al-Rashidi",
+  client_address: "Penthouse 42, Dubai Marina, UAE",
+  invoice_number: "AF-2026-012",
+  date: "May 24, 2026",
+  due_date: "July 1, 2026",
+  items: [
+    { name: "Interior Design Consultation", desc: "Initial site survey, mood boards, concept presentation", qty: 1, price: 4500 },
+    { name: "Full Interior Design Package", desc: "Living room, dining, master suite — 3 rooms", qty: 3, price: 18000 },
+    { name: "Furniture Procurement & Styling", desc: "Curated selection from European ateliers", qty: 1, price: 42000 },
+    { name: "Project Management", desc: "12-week on-site supervision", qty: 12, price: 2200 },
+    { name: "Final Photography & Handover", qty: 1, price: 3800 }
+  ],
+  tax: 0.05,
+  note: "All furniture items are non-refundable once ordered. Lead time 10–14 weeks."
+};
+
+const inv4 = {
+  brand: { company: "Golden Hour Photography", color: "#9f1239", email: "sara@goldenhourphoto.com", phone: "+1 310 555 0182" },
+  client: "Emily & James Thornton",
+  client_email: "thornton.wedding@gmail.com",
+  invoice_number: "GHP-2026-WED-019",
+  date: "May 24, 2026",
+  due_date: "June 1, 2026",
+  items: [
+    { name: "Full Day Wedding Coverage", desc: "10 hours, 2 photographers, ceremony + reception", qty: 1, price: 4200 },
+    { name: "Engagement Session", desc: "2-hour golden hour session at venue", qty: 1, price: 850 },
+    { name: "Premium Edit & Gallery", desc: "500+ edited photos, private online gallery, 5yr hosting", qty: 1, price: 1200 },
+    { name: "Fine Art Print Box", desc: "30 curated prints in archival heirloom box", qty: 1, price: 680 },
+    { name: "Wedding Album — 40 pages", desc: "Lay-flat album, leather cover, custom embossing", qty: 1, price: 1400 }
+  ],
+  tax: 0,
+  note: "Retainer of $2,000 paid on booking. Remaining balance due 7 days before wedding date."
+};
+
+const inv5 = {
+  brand: { company: "Chambers & Whitfield LLP", color: "#374151", email: "accounts@chamberswhitfield.com", address: "30 St Mary Axe, London EC3A 8BF", phone: "+44 20 3456 7890" },
+  client: "Meridian Capital Group",
+  client_email: "legal@meridiancapital.com",
+  client_address: "Canary Wharf, London E14 5AB",
+  invoice_number: "CW-2026-INV-1142",
+  date: "May 24, 2026",
+  due_date: "June 23, 2026",
+  items: [
+    { name: "Corporate Restructuring Advice", desc: "Partner — J. Whitfield QC (14.5 hrs @ £650/hr)", qty: 14.5, price: 650 },
+    { name: "Due Diligence Review", desc: "Associate — R. Patel (28 hrs @ £320/hr)", qty: 28, price: 320 },
+    { name: "Contract Drafting & Review", desc: "Senior Associate — M. Chen (11 hrs @ £420/hr)", qty: 11, price: 420 },
+    { name: "Court Filing Fees", qty: 1, price: 1850 },
+    { name: "Disbursements & Admin", qty: 1, price: 420 }
+  ],
+  tax: 0.2,
+  note: "Payment required within 30 days. Interest charged at 8% per annum on overdue amounts per the Late Payment of Commercial Debts Act."
+};
+
+// ══ RESUME DATA ══
+const res1 = {
+  name: "Priya Nakamura",
+  title: "Senior Product Designer",
+  email: "priya@nakamuradesign.io",
+  phone: "+1 415 890 3321",
+  location: "San Francisco, CA",
+  linkedin: "linkedin.com/in/priyanakamura",
+  brand: { color: "#312e81", accent: "#6366f1" },
+  summary: "Product designer with 8 years crafting intuitive, scalable digital experiences for Series B startups and Fortune 100 companies. Specialize in 0→1 product design, design systems, and cross-functional leadership.",
+  experience: [
+    { role: "Senior Product Designer", company: "Stripe", period: "2023 – Present", location: "San Francisco", points: ["Led complete redesign of Stripe Dashboard used by 3M+ merchants", "Built and maintained component library of 280+ Figma components", "Reduced merchant onboarding time from 22 mins to 9 mins", "Managed 2 mid-level designers and collaborated with 8 PMs"] },
+    { role: "Product Designer II", company: "Figma", period: "2020 – 2023", location: "Remote", points: ["Designed FigJam from concept to launch — 4M users in year one", "Led accessibility audit resulting in WCAG 2.1 AA compliance", "Created Figma's first design system documentation framework"] },
+    { role: "UI/UX Designer", company: "Airbnb", period: "2018 – 2020", points: ["Redesigned host onboarding, increasing completion rate by 34%", "Prototyped and validated 60+ concepts through user research"] }
+  ],
+  education: [{ degree: "B.F.A. Interaction Design", school: "California College of the Arts", year: "2018" }],
+  skills: ["Figma", "Prototyping", "User Research", "Design Systems", "Accessibility", "React", "Framer", "Motion Design", "Workshop Facilitation"]
+};
+
+const res2 = {
+  name: "Alexander Hartmann",
+  title: "Vice President, Investment Banking",
+  email: "a.hartmann@email.com",
+  phone: "+1 212 555 0944",
+  location: "New York, NY",
+  brand: { color: "#0f2027", accent: "#1d4ed8" },
+  summary: "CFA charterholder and Harvard MBA with 11 years in M&A advisory and capital markets. Executed $4.2B+ in transaction value across technology, healthcare, and consumer sectors.",
+  experience: [
+    { role: "Vice President, M&A Advisory", company: "Goldman Sachs", period: "2021 – Present", points: ["Led execution of 12 M&A transactions totaling $2.8B in deal value", "Managed client relationships across 8 Fortune 500 accounts", "Recruited and mentored team of 6 analysts and associates"] },
+    { role: "Associate, Leveraged Finance", company: "JPMorgan Chase", period: "2017 – 2021", points: ["Structured $800M leveraged buyout for private equity sponsor", "Built financial models for 40+ pitch books and fairness opinions"] },
+    { role: "Analyst", company: "Morgan Stanley", period: "2015 – 2017", points: ["Ranked #1 analyst class in 2016 performance review", "Supported $600M IPO for leading SaaS company"] }
+  ],
+  education: [
+    { degree: "MBA, Finance & Strategy", school: "Harvard Business School", year: "2015" },
+    { degree: "B.S. Economics (Summa Cum Laude)", school: "University of Pennsylvania — Wharton", year: "2013" }
+  ],
+  skills: ["M&A Advisory", "LBO Modeling", "DCF Analysis", "Capital Markets", "CFA", "Bloomberg Terminal", "FactSet", "PowerPoint", "Client Management"]
+};
+
+const res3 = {
+  name: "Marcus Osei",
+  title: "Staff Software Engineer",
+  email: "marcus.osei@dev.io",
+  phone: "+1 650 444 7821",
+  location: "Mountain View, CA",
+  linkedin: "github.com/marcosei",
+  brand: { color: "#0d1117", accent: "#22c55e" },
+  summary: "Staff engineer with 9 years building distributed systems at scale. Open source contributor with 12K GitHub stars. Expert in Go, Rust, and Kubernetes. Passionate about developer tooling and infrastructure.",
+  experience: [
+    { role: "Staff Software Engineer", company: "Google", period: "2022 – Present", points: ["Architected distributed tracing system serving 800K RPS", "Reduced infrastructure costs by $2.4M annually through optimization", "Tech lead for team of 11 engineers across 3 time zones", "Authored 3 internal RFCs adopted company-wide"] },
+    { role: "Senior Engineer, Platform", company: "Netflix", period: "2019 – 2022", points: ["Built edge caching layer serving 230M+ subscribers", "Migrated monolith to 40+ microservices with zero downtime", "Maintained 99.997% uptime during peak streaming events"] },
+    { role: "Software Engineer", company: "Dropbox", period: "2016 – 2019", points: ["Core contributor to Dropbox Paper real-time sync engine", "Reduced document load time by 68% through WASM optimization"] }
+  ],
+  education: [{ degree: "B.S. Computer Science", school: "MIT", year: "2016" }],
+  skills: ["Go", "Rust", "Python", "Kubernetes", "gRPC", "PostgreSQL", "Redis", "Terraform", "AWS", "Distributed Systems", "System Design"]
+};
+
+const res4 = {
+  name: "Sofia Reyes-Montoya",
+  title: "Chief Marketing Officer",
+  email: "sofia@reyesmontoya.com",
+  phone: "+1 323 800 5544",
+  location: "Los Angeles, CA",
+  brand: { color: "#7f1d1d", accent: "#dc2626" },
+  summary: "CMO with 14 years building global brands from the ground up. Led marketing for 3 unicorn companies. Expertise in performance marketing, brand storytelling, and scaling DTC businesses to $100M+ ARR.",
+  experience: [
+    { role: "Chief Marketing Officer", company: "Glossier", period: "2022 – Present", points: ["Grew brand revenue from $180M to $340M in 2 years", "Built and led 42-person global marketing team", "Launched in 8 new international markets", "Achieved 4.2x ROAS on $60M paid media budget"] },
+    { role: "VP Marketing", company: "Allbirds", period: "2019 – 2022", points: ["Repositioned brand during post-IPO growth phase", "Launched sustainability marketing campaign — 2.1B impressions", "Reduced CAC by 28% through channel diversification"] },
+    { role: "Head of Growth", company: "Casper", period: "2016 – 2019", points: ["Scaled email list from 200K to 4.2M subscribers", "Directed first national TV campaign with $12M budget"] }
+  ],
+  education: [{ degree: "M.B.A., Marketing", school: "UCLA Anderson School of Management", year: "2012" }],
+  skills: ["Brand Strategy", "Performance Marketing", "DTC Growth", "Paid Media", "Content Strategy", "CRM", "A/B Testing", "Team Leadership", "P&L Ownership"]
+};
+
+const res5 = {
+  name: "Yusuf Al-Khatib",
+  title: "Principal Architect — RIBA",
+  email: "y.alkhatib@alkhatibarchitects.com",
+  phone: "+971 50 334 8820",
+  location: "Dubai, UAE",
+  brand: { color: "#1c1917", accent: "#d97706" },
+  summary: "RIBA-accredited architect with 16 years delivering iconic civic, commercial, and residential projects across the Middle East, Europe, and Asia. Design philosophy rooted in cultural sensitivity, sustainable materials, and spatial poetry.",
+  experience: [
+    { role: "Principal Architect", company: "Al-Khatib Architects", period: "2016 – Present", location: "Dubai", points: ["Designed 240,000 sqm mixed-use development in Abu Dhabi ($1.4B)", "Won Aga Khan Award for Architecture 2024", "Led studio of 28 architects, engineers, and interior designers", "Projects delivered in UAE, Saudi Arabia, UK, and Malaysia"] },
+    { role: "Associate Architect", company: "Zaha Hadid Architects", period: "2012 – 2016", location: "London", points: ["Design lead on King Abdullah Financial District tower, Riyadh", "Developed parametric facades for 3 major civic projects"] },
+    { role: "Architect", company: "Foster + Partners", period: "2008 – 2012", location: "London", points: ["Contributed to Bloomberg HQ London design development", "Managed BIM coordination across 60-person project team"] }
+  ],
+  education: [
+    { degree: "M.Arch (Distinction)", school: "Bartlett School of Architecture, UCL", year: "2008" },
+    { degree: "B.Arch", school: "American University of Beirut", year: "2006" }
+  ],
+  skills: ["Revit", "Rhino 3D", "Grasshopper", "AutoCAD", "BIM", "Parametric Design", "LEED", "Project Management", "Client Relations", "Arabic", "English", "French"]
+};
+
+// ══ CERTIFICATE DATA ══
+const cert1 = {
+  brand: { company: "CodeAcademy Pro", color: "#4f46e5" },
+  recipient: "Abdullah Khalid Mirza",
+  type: "Completion",
+  description: "has successfully completed the Full-Stack Web Development Bootcamp — 480 hours of intensive training in React, Node.js, PostgreSQL, and cloud deployment — with a grade of Distinction.",
+  grade: "Distinction — 94/100",
+  date: "May 24, 2026",
+  issuer: "Dr. Samira Patel, Director",
+  certificate_id: "CAP-2026-FS-00847"
+};
+
+const cert2 = {
+  brand: { company: "Meridian Group", color: "#92400e" },
+  recipient: "James Chen",
+  type: "Excellence",
+  description: "has demonstrated outstanding leadership, innovation, and dedication to organizational excellence, and is hereby recognized as Employee of the Year 2026 — the highest honor bestowed by Meridian Group.",
+  date: "May 24, 2026",
+  issuer: "Robert Ashford, CEO",
+  certificate_id: "MG-EOY-2026"
+};
+
+const cert3 = {
+  brand: { company: "Forma Creative Studio", color: "#e11d48" },
+  recipient: "Nour Hassan",
+  type: "Participation",
+  description: "has participated in the Design Thinking for Innovation Workshop — a 3-day immersive programme exploring human-centred design, rapid prototyping, and creative problem-solving methodologies.",
+  date: "May 22–24, 2026",
+  issuer: "Lena Brandt, Creative Director"
+};
+
+const cert4 = {
+  brand: { company: "Royal Medical Training Institute", color: "#0f766e" },
+  recipient: "Fatima Al-Zahrawi",
+  type: "Certification",
+  description: "has successfully completed the Advanced Cardiac Life Support (ACLS) and Basic Life Support (BLS) Certification Programme, meeting all competency requirements set by the American Heart Association.",
+  date: "May 24, 2026",
+  issuer: "Prof. David Murray, MD FRCS",
+  certificate_id: "RMTI-ACLS-2026-8821"
+};
+
+const cert5 = {
+  brand: { company: "University of Edinburgh", color: "#7f1d1d" },
+  recipient: "Oliver Blackwood",
+  type: "Academic Distinction",
+  description: "has been placed on the Dean's List for Academic Excellence for achieving a Grade Point Average of 3.92/4.00 in the Spring Semester 2026 — ranking in the top 2% of the School of Engineering.",
+  date: "May 24, 2026",
+  issuer: "Prof. Sarah MacLeod, Dean",
+  certificate_id: "UoE-DL-2026-SPR-4471"
+};
+
+// ══ REPORT DATA ══
+const rep1 = {
+  brand: { company: "Apex Ventures", color: "#047857" },
+  title: "Q1 2026 Performance Report",
+  date: "May 24, 2026",
+  author: "Finance & Strategy Team",
+  summary: "Q1 2026 delivered record-breaking performance with total revenue of $12.4M — a 41% YoY increase — driven by enterprise segment expansion and successful launch of the Pro tier. EBITDA margin improved to 28%, up from 19% in Q1 2025.",
+  sections: [
+    { title: "Revenue Breakdown", content: "Total revenue reached $12.4M against a target of $10.8M. Enterprise contracts contributed $7.2M (58%), SMB $3.8M (31%), and self-serve $1.4M (11%). Monthly Recurring Revenue closed at $4.1M, up from $2.9M in Q4 2025.", table: { headers: ["Segment", "Q1 2026", "Q1 2025", "Growth"], rows: [["Enterprise", "$7.2M", "$4.8M", "+50%"], ["SMB", "$3.8M", "$2.9M", "+31%"], ["Self-Serve", "$1.4M", "$1.1M", "+27%"], ["Total", "$12.4M", "$8.8M", "+41%"]] } },
+    { title: "Customer Metrics", content: "Total paying customers reached 8,420, up from 5,910 in Q1 2025. Net Revenue Retention held at 118%, confirming strong expansion revenue within existing accounts. Churn remained below industry average at 1.8% monthly." },
+    { title: "Operating Expenses", content: "Total OpEx of $8.9M was 4% under budget. Sales & Marketing accounted for 38% of spend. R&D investment increased to 24% of revenue, reflecting commitment to product innovation. G&A efficiency improved with costs holding flat despite 31% headcount growth." }
+  ],
+  conclusion: "Q1 2026 validates our enterprise-first strategy. With a strong pipeline of $38M in qualified opportunities entering Q2, we are confident of delivering full-year revenue of $52M–$55M."
+};
+
+const rep2 = {
+  brand: { company: "Insight Research Group", color: "#1d4ed8" },
+  title: "Consumer Behaviour in the Post-AI Economy",
+  date: "May 2026",
+  author: "Dr. Aisha Okonkwo & Research Team",
+  summary: "A comprehensive study of 4,200 consumers across 12 markets reveals that 67% have changed purchasing behaviour due to AI-powered recommendations. Trust in AI assistants has increased 34% YoY, while price sensitivity has decreased in categories where AI provides high confidence.",
+  sections: [
+    { title: "Methodology", content: "Data was collected via online surveys (n=4,200), in-depth interviews (n=60), and passive behavioural tracking across opted-in panels (n=1,800) across the US, UK, Germany, UAE, India, and Singapore between January–April 2026. Margin of error ±2.1% at 95% confidence." },
+    { title: "Key Finding: AI Trust Surge", content: "Consumer trust in AI product recommendations reached 58% in 2026, up from 43% in 2025. Millennial and Gen-Z consumers show the highest adoption, with 74% reporting they regularly use AI assistants for purchase decisions. Trust is highest in electronics (71%) and lowest in healthcare (39%)." },
+    { title: "Behavioural Shifts", content: "Consumers exposed to personalised AI recommendations convert at 2.3x the rate of those browsing organically. Average order value increases 18% when AI recommendation confidence scores exceed 85%. Cart abandonment decreases by 27% with real-time AI-assisted decision support." }
+  ],
+  conclusion: "Brands that invest in AI-native customer experiences will capture disproportionate market share over the next 24 months. Organisations should prioritise AI recommendation infrastructure as a primary growth lever."
+};
+
+const rep3 = {
+  brand: { company: "PixelPulse Digital", color: "#ea580c" },
+  title: "SEO Performance Audit — NovaBrew Co.",
+  date: "May 24, 2026",
+  author: "SEO Strategy Team",
+  summary: "NovaBrew's organic search performance has declined 23% over 6 months, primarily due to three technical issues and an outdated content strategy. This audit identifies the root causes and provides a prioritised 90-day action plan projected to recover and exceed previous organic traffic levels.",
+  sections: [
+    { title: "Current Performance", content: "Organic sessions: 38,400/month (down from 49,800). Keyword rankings: 284 keywords in top 10 (down from 401). Domain Authority: 42 (unchanged). Core Web Vitals: LCP 4.1s (Poor), FID 180ms (Needs Improvement), CLS 0.18 (Poor). Page Speed Score: 41/100 mobile.", table: { headers: ["Metric", "Current", "6 Months Ago", "Status"], rows: [["Organic Sessions", "38,400", "49,800", "▼ 23%"], ["Top-10 Keywords", "284", "401", "▼ 29%"], ["Avg. Position", "14.2", "9.8", "▼ 45%"], ["Bounce Rate", "68%", "54%", "▼ Worse"]] } },
+    { title: "Critical Issues Found", content: "Issue 1 — Site Speed: Core Web Vitals failing on 78% of pages due to unoptimised images (avg 2.4MB) and render-blocking JavaScript. Issue 2 — Content Cannibalisation: 34 pairs of pages targeting identical keywords, splitting authority and confusing crawlers. Issue 3 — Broken Backlink Profile: 142 high-authority referring domains lost after URL structure change in November 2025." },
+    { title: "90-Day Action Plan", content: "Days 1–30: Technical fixes — image compression, JS deferral, redirect chain cleanup. Days 31–60: Content consolidation — merge cannibalised pages, update thin content. Days 61–90: Link recovery — outreach campaign to reclaim lost backlinks, 3 digital PR placements. Projected outcome: +35% organic sessions, 180+ keywords recovered to top 10." }
+  ],
+  conclusion: "With disciplined execution of this plan, NovaBrew can expect to fully recover organic traffic within 90 days and reach 65,000+ monthly organic sessions by Q4 2026."
+};
+
+const rep4 = {
+  brand: { company: "Verdant Corp", color: "#166534" },
+  title: "Sustainability & ESG Annual Report 2026",
+  date: "May 24, 2026",
+  author: "Sustainability Office",
+  summary: "Verdant Corp achieved a 31% reduction in Scope 1 and 2 emissions in 2025, on track to reach net-zero by 2030. This report documents our environmental, social, and governance progress and outlines the roadmap for the next phase of our sustainability transformation.",
+  sections: [
+    { title: "Environmental Progress", content: "Total carbon emissions fell to 48,200 tCO₂e in 2025, down from 70,100 in 2023. Renewable energy now powers 74% of all facilities globally. Water consumption reduced by 22% through closed-loop systems. Zero-waste-to-landfill achieved across 6 of 9 manufacturing sites.", table: { headers: ["KPI", "2023 Baseline", "2025 Actual", "2030 Target"], rows: [["Scope 1+2 Emissions", "70,100 tCO₂e", "48,200 tCO₂e", "Net Zero"], ["Renewable Energy", "28%", "74%", "100%"], ["Water Intensity", "4.2 m³/unit", "3.3 m³/unit", "2.0 m³/unit"]] } },
+    { title: "Social Impact", content: "Employee wellbeing index reached 78/100, up 12 points from 2023. Gender pay gap closed to 0.3% (industry average: 8.2%). Community investment totalled £4.2M, supporting 14 local education programmes. Supplier diversity spend increased to 38% of procurement budget." },
+    { title: "Governance", content: "Board diversity reached 45% women and 30% ethnic minorities. ESG metrics now directly linked to 25% of executive compensation. Third-party assurance provided by Deloitte on all material sustainability disclosures. Achieved CDP Climate Score of A- (Leadership Band)." }
+  ],
+  conclusion: "Our 2025 performance demonstrates that sustainability and profitability are not opposing forces. Verdant Corp will accelerate investment in green innovation to deliver on our 2030 net-zero commitment."
+};
+
+const rep5 = {
+  brand: { company: "Helix Biotech", color: "#334155" },
+  title: "Workforce Analytics Report — H1 2026",
+  date: "May 24, 2026",
+  author: "People & Culture Team",
+  summary: "Helix Biotech's workforce grew to 2,840 employees in H1 2026, with voluntary turnover declining to a 5-year low of 8.2%. Hiring velocity increased 40% versus H1 2025, driven by the expansion of R&D and commercial teams. Engagement scores hit 82%, the highest in company history.",
+  sections: [
+    { title: "Headcount & Growth", content: "Total headcount: 2,840 (target: 2,750). Net hires in H1: 312. Departures: 118. By function: R&D 38%, Commercial 29%, Operations 18%, G&A 15%. Geographic split: North America 52%, Europe 31%, Asia-Pacific 17%.", table: { headers: ["Department", "H1 2025", "H1 2026", "Change"], rows: [["R&D", "890", "1,079", "+21%"], ["Commercial", "610", "823", "+35%"], ["Operations", "440", "511", "+16%"], ["G&A", "390", "427", "+9%"]] } },
+    { title: "Retention & Engagement", content: "Voluntary turnover at 8.2% — down from 12.4% in H1 2025 — driven by revised compensation benchmarking (now at 75th percentile), enhanced remote work policy, and new career pathing framework. Regrettable attrition fell to 3.1%. Employee Net Promoter Score: 54 (industry benchmark: 38)." },
+    { title: "Hiring Pipeline", content: "Active requisitions: 148. Average time-to-fill: 34 days (down from 52 days). Offer acceptance rate: 87%. Top talent sources: employee referrals (34%), LinkedIn (28%), direct applications (22%), agencies (16%). Diversity hiring: 48% of new hires from underrepresented groups." }
+  ],
+  conclusion: "H1 2026 represents Helix Biotech's strongest talent performance to date. Priority areas for H2 include leadership development, international mobility, and continued investment in employer brand to sustain hiring momentum."
+};
+
+// ══ PROPOSAL DATA ══
+const pro1 = {
+  brand: { company: "Forge Digital", color: "#b91c1c" },
+  title: "Fintech Platform — Full Stack Development",
+  client: "ClearPay Technologies",
+  date: "May 24, 2026",
+  overview: "ClearPay requires a robust, scalable payment platform capable of processing 50,000+ transactions per second across 30 markets. Forge Digital proposes a phased development approach using a microservices architecture built on Go and Kubernetes, with a React-based merchant dashboard.",
+  problem: "ClearPay's legacy system built on a monolithic PHP codebase cannot support the transaction volumes required for Series B growth targets. Downtime incidents are costing an estimated $180,000/month in lost revenue and merchant churn.",
+  solution: "We will architect a cloud-native payment infrastructure on AWS with multi-region failover, PCI-DSS Level 1 compliance, and real-time fraud detection powered by ML models. The system is designed to scale to 500K TPS with sub-100ms latency globally.",
+  deliverables: [
+    "Phase 1 — Architecture blueprint and infrastructure setup (4 weeks)",
+    "Phase 2 — Core payment processing engine with API gateway (8 weeks)",
+    "Phase 3 — Merchant dashboard and analytics portal (6 weeks)",
+    "Phase 4 — Fraud detection ML integration and compliance certification (4 weeks)",
+    "Phase 5 — Load testing, security audit, and go-live support (3 weeks)",
+    "12 months post-launch SLA: 99.99% uptime guarantee"
+  ],
+  timeline: "25 weeks from signed agreement to production go-live. Weekly sprint reviews with ClearPay engineering leadership.",
+  budget: "$340,000",
+  next_steps: "Schedule a 2-hour technical deep-dive with your CTO and our lead architect. Upon agreement, we can begin Phase 1 within 5 business days."
+};
+
+const pro2 = {
+  brand: { company: "Studio Velour", color: "#581c87" },
+  title: "Brand Identity & Visual Language",
+  client: "The Meridian Hotel Collection",
+  date: "May 24, 2026",
+  overview: "The Meridian Hotel Collection is repositioning from a 4-star business hotel brand to a luxury lifestyle destination. Studio Velour proposes a complete brand identity system that communicates refined exclusivity, cultural depth, and modern elegance — designed to attract the global ultra-high-net-worth traveller.",
+  problem: "The current brand identity was designed in 2011 and no longer reflects The Meridian's service quality or competitive positioning. Guest research shows that 61% of prospective guests perceive the brand as 'dated' and 'corporate' — significantly impacting conversion from digital channels.",
+  solution: "We will create a timeless visual identity rooted in the architectural heritage of each property, expressed through bespoke typography, a refined colour system, and a flexible design language that works across physical touchpoints, digital platforms, and experiential marketing.",
+  deliverables: [
+    "Brand strategy and positioning document",
+    "Custom wordmark and symbol suite (12 logo lockups)",
+    "Proprietary typeface licence and usage guidelines",
+    "Primary and seasonal colour palette system",
+    "Brand guidelines book — 180 pages, print and digital",
+    "Stationery suite: letterhead, envelopes, room collateral",
+    "Digital UI kit — 200+ components for web and app",
+    "Signage and wayfinding specifications for 4 properties",
+    "Social media template library — 80 designs"
+  ],
+  timeline: "20 weeks. Brand strategy: weeks 1–4. Identity design: weeks 5–12. Guidelines and rollout: weeks 13–20.",
+  budget: "£185,000",
+  next_steps: "We invite The Meridian team to a brand immersion workshop at your flagship London property. This 1-day session will align on positioning before creative development begins."
+};
+
+const pro3 = {
+  brand: { company: "Pulse Social Agency", color: "#0e7490" },
+  title: "Social Media Management — 12-Month Partnership",
+  client: "Élan Fashion House",
+  date: "May 24, 2026",
+  overview: "Pulse Social Agency proposes a 12-month strategic social media management partnership for Élan Fashion House, focused on building a global community of 2M+ followers, establishing Élan as a thought leader in sustainable luxury fashion, and driving €4M+ in attributable social commerce revenue.",
+  problem: "Élan's social presence has stagnated at 340K followers despite a 180% increase in ad spend. Organic reach has declined 44% due to inconsistent posting, misaligned content strategy, and a lack of creator partnerships. Current engagement rate of 0.8% is far below the luxury fashion benchmark of 3.2%.",
+  solution: "Our approach combines a data-driven content strategy, a premium creator network of 120 fashion micro-influencers, and performance-optimised paid amplification. We will establish a consistent editorial voice that celebrates Élan's craftsmanship and sustainability values across Instagram, TikTok, and Pinterest.",
+  deliverables: [
+    "Monthly content calendar — 90 posts per month across 3 platforms",
+    "24 long-form editorial reels per year (production included)",
+    "Influencer partnership management — 8 activations per month",
+    "Community management — 7 days/week, 2hr response time",
+    "Monthly analytics report with competitor benchmarking",
+    "Quarterly strategy review and KPI recalibration",
+    "Paid social management — up to €80,000/month ad spend"
+  ],
+  timeline: "12-month rolling contract. Onboarding and strategy phase: weeks 1–3. First content live: week 4.",
+  budget: "€14,400/month (€172,800 annually) + production costs",
+  next_steps: "Book a 90-minute discovery call with our Creative Director and Head of Strategy. We will present a preliminary content audit and competitor analysis for Élan before the meeting."
+};
+
+const pro4 = {
+  brand: { company: "Al-Khatib Architects", color: "#292524" },
+  title: "Horizon Tower — Commercial Office Development",
+  client: "Gulf Capital Properties",
+  date: "May 24, 2026",
+  overview: "Al-Khatib Architects proposes the full architectural design and project delivery services for Horizon Tower — a landmark 52-storey Grade A commercial office development in the DIFC, Dubai. The design philosophy draws from Islamic geometric tradition reinterpreted through contemporary parametric methods, creating a building that is both culturally resonant and globally iconic.",
+  problem: "Gulf Capital requires a design that meets LEED Platinum certification, accommodates 8,200 employees across 62,000 sqm of lettable space, and achieves a Gross Yield of 8.5%+ while establishing a distinctive presence in an increasingly competitive DIFC skyline.",
+  solution: "Our proposed double-skin facade system reduces solar heat gain by 47% versus conventional glass curtain walls, dramatically reducing cooling loads and supporting LEED targets. The floorplate design achieves a column-free span of 18m, providing premium flexibility for multi-tenancy configurations.",
+  deliverables: [
+    "Concept design — 3D visualisations, massing studies, planning application",
+    "Schematic design — structural and MEP coordination",
+    "Design development — full BIM model (Revit, Navisworks)",
+    "Construction documentation — 1,200+ drawings",
+    "Tender management and contractor procurement support",
+    "Construction administration — 36 months on-site",
+    "LEED Platinum certification management",
+    "Post-occupancy evaluation (12 months)"
+  ],
+  timeline: "60 months from appointment to practical completion. Planning consent target: Month 8.",
+  budget: "AED 12,800,000 (architect's fee, excl. structural and MEP engineering)",
+  next_steps: "Formal appointment subject to fee negotiation and agreement of scope. We propose a site visit and concept workshop within 10 days of receiving your confirmation to proceed."
+};
+
+const pro5 = {
+  brand: { company: "Meridian Consulting Group", color: "#1e3a5f" },
+  title: "Operational Restructuring Programme",
+  client: "Britannia Manufacturing PLC",
+  date: "May 24, 2026",
+  overview: "Meridian Consulting Group proposes a 6-month operational restructuring programme for Britannia Manufacturing PLC, targeting £18M in annualised cost savings, a 35% improvement in production efficiency, and the capability platform required for Britannia's planned expansion into the German and Polish markets.",
+  problem: "Britannia's cost structure has deteriorated significantly over 18 months. EBITDA margins have compressed from 22% to 14% due to energy cost inflation, supply chain disruption, and legacy production processes. Three factories are operating at below 60% utilisation, and the current organisational structure creates duplicative overhead of an estimated £6.2M annually.",
+  solution: "Our programme combines process reengineering using Lean Six Sigma methodology, strategic procurement renegotiation, organisational design, and digital transformation of production scheduling. We have delivered an average of 127% of projected savings targets across 23 similar engagements in European manufacturing.",
+  deliverables: [
+    "Current state diagnostic — full operational and financial assessment",
+    "Opportunity identification — £18M+ saving initiatives mapped to P&L",
+    "Process redesign — 12 core manufacturing workflows",
+    "Organisational design — new operating model and structure",
+    "Digital roadmap — ERP optimisation and production scheduling system",
+    "Change management programme — leadership coaching and communications",
+    "Implementation support through to savings realisation",
+    "Final report and capability transfer for self-sufficiency"
+  ],
+  timeline: "6 months. Diagnostic complete by end of Month 1. First savings realised by Month 3.",
+  budget: "£2,400,000 (fixed fee). Success fee of £600,000 payable if savings exceed £20M in Year 1.",
+  next_steps: "Meridian proposes a 2-day diagnostic visit with your CFO, COO, and plant managers at your Coventry facility — at no cost — to validate the opportunity sizing before formal engagement. We are available to begin within 10 days."
+};
+</script>
+</body>
+</html>

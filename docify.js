@@ -1,7 +1,7 @@
 /*!
  * Docify.js v1.0.0
  * LLM-first document generation library
- * https://github.com/your-username/docify
+ * https://github.com/abdullahkhalidmirza/docify
  * License: MIT
  */
 

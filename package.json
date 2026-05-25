@@ -1,20 +1,17 @@
 {
-  "name": "docify-js",
-  "version": "1.0.0",
+  "name": "docifyai",
+  "version": "1.0.1",
   "description": "LLM-first document generation library. JSON in → beautiful PDF/HTML out.",
   "main": "docify.js",
-  "scripts": {
-    "test": "echo \"No tests yet\""
-  },
   "keywords": [
     "pdf", "invoice", "resume", "certificate", "document", "generation",
     "llm", "ai", "template", "html", "export", "docx"
   ],
-  "author": "Your Name",
+  "author": "Abdullah Khalid Mirza <abdullahkhalidmirza@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/docify"
+    "url": "git+https://github.com/abdullahkhalidmirza/docify.git"
   },
-  "homepage": "https://docify.js.org"
+  "homepage": "https://abdullahkhalidmirza.com"
 }

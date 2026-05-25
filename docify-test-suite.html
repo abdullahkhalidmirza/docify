@@ -85,13 +85,46 @@ nav{
   border:1px solid rgba(245,240,232,0.08);
 }
 
+/* ── FOOTER ── */
 footer{
-  padding:24px 48px;border-top:2px solid var(--red);
-  display:flex;justify-content:space-between;align-items:center;
+  background:var(--ink);
+  border-top:2px solid var(--red);
+  padding:32px 48px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-.footer-logo{font-family:var(--display);font-size:18px;letter-spacing:2px;}
+
+.footer-logo{
+  font-family:var(--display);
+  font-size:20px;
+  letter-spacing:2px;
+  color:var(--paper);
+}
+
 .footer-logo span{color:var(--red)}
-.footer-copy{font-family:var(--mono);font-size:10px;color:rgba(245,240,232,0.25);}
+
+.footer-links{
+  display:flex;
+  gap:24px;
+}
+
+.footer-links a{
+  font-family:var(--mono);
+  font-size:11px;
+  color:rgba(245,240,232,0.4);
+  text-decoration:none;
+  transition:color 0.15s;
+}
+
+.footer-links a:hover{color:var(--paper)}
+
+.footer-copy{
+  font-family:var(--mono);
+  font-size:10px;
+  color:rgba(245,240,232,0.25);
+}
+
 </style>
 </head>
 <body>
@@ -416,9 +449,16 @@ footer{
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">DOCIFY<span>AI</span></div>
-  <div class="footer-copy">MIT © ABDULLAH KHALID MIRZA · ABDULLAHKHALIDMIRZA.COM</div>
+  <div class="footer-links">
+    <a href="https://github.com/abdullahkhalidmirza/docify" target="_blank">GitHub</a>
+    <a href="https://npmjs.com/package/docifyai" target="_blank">npm</a>
+    <a href="https://abdullahkhalidmirza.com" target="_blank">Website</a>
+    <a href="mailto:abdullahkhalidmirza@gmail.com">Email</a>
+  </div>
+  <div class="footer-copy">MIT © Abdullah Khalid Mirza</div>
 </footer>
 
 <!-- CDN -->

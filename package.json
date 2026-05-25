@@ -1,6 +1,6 @@
 {
   "name": "docifyai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "LLM-first document generation library. JSON in → beautiful PDF/HTML out.",
   "main": "docify.js",
   "keywords": [

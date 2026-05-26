@@ -1,5 +1,7 @@
 # docifyai
 
+<img width="800" height="376" alt="bandicam2026-05-2613-45-36-068-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/5fd3a08c-be51-4fc8-8216-70a3d679363c" />
+
 > LLM-first document generation. JSON in → beautiful PDF out.
 
 [![npm](https://img.shields.io/npm/v/docifyai)](https://npmjs.com/package/docifyai)

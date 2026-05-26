@@ -190,10 +190,10 @@ The schema is flat and predictable. Fill only fields you know — everything els
 ## Author
 
 **Abdullah Khalid Mirza**
-- Website: abdullahkhalidmirza.com
+- Website: https://abdullahkhalidmirza.com
 - Email: abdullahkhalidmirza@gmail.com
-- npm: npmjs.com/~abdullahkhalidmirza
-- GitHub: github.com/abdullahkhalidmirza
+- npm: https://npmjs.com/~abdullahkhalidmirza
+- GitHub: https://github.com/abdullahkhalidmirza
 
 ---
 
